@@ -14,7 +14,6 @@
     // import errorCodes from '@/utils/errorCodes' ;
     import NavbarSideBar from '@/components/navbar/NavbarSidebar'
     import Navbar from '@/components/navbar/Navbar'
-    import RegistroDocs from '@/views/registroDocs/RegistroDocs';
 
     export default {
         name: "Dashboard"
@@ -22,7 +21,6 @@
         , components: {
           Navbar
         , NavbarSideBar
-        , RegistroDocs
 
          } ,
          data() {

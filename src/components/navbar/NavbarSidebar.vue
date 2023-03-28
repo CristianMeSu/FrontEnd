@@ -62,72 +62,6 @@
 
                         <li><hr /></li>
 
-                        <li class="nav-item " v-if="IT || modules.legal">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
-                                <p>
-                                    Legal
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <router-link to="/contratos" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Contratos</p>
-                                    </router-link>
-                                </li>
-
-                            </ul>
-                        </li>
-
-                        <li class="nav-item" v-if="IT || modules.compras">
-                            <router-link to="/Requisiciones" class="nav-link">
-                                <p>
-                                    <i class="nav-icon fas fa-th"></i>
-                                    Requisiciones
-    <!--                                <span class="right badge badge-danger">New</span>-->
-                                </p>
-                            </router-link>
-                        </li>
-
-                      <li class="nav-item " v-if="IT">
-                        <a href="#" class="nav-link">
-                          <i class="nav-icon fas fa-tachometer-alt"></i>
-                          <p>
-                            Construccion
-                            <i class="right fas fa-angle-left"></i>
-                          </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                          <li class="nav-item">
-                            <router-link to="/Projects" class="nav-link">
-                              <i class="far fa-circle nav-icon"></i>
-                              <p>Projects</p>
-                            </router-link>
-                          </li>
-
-                        </ul>
-                      </li>
-
-                      <li class="nav-item " v-if="IT">
-                        <a href="#" class="nav-link">
-                          <i class="nav-icon fas fa-tachometer-alt"></i>
-                          <p>
-                            RRHH
-                            <i class="right fas fa-angle-left"></i>
-                          </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                          <li class="nav-item">
-                            <router-link to="/Objetivos" class="nav-link">
-                              <i class="far fa-circle nav-icon"></i>
-                              <p>Objetivos Anuales</p>
-                            </router-link>
-                          </li>
-
-                        </ul>
-                      </li>
                         <li class="nav-item " v-if="IT">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -138,46 +72,8 @@
                             </a>
 
                                 <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <router-link to="/Corporativo" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Corporativo</p>
-                                        </router-link>
-                                    </li>
 
-                                    <li class="nav-item">
-                                        <router-link to="/Divisiones" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Divisiones</p>
-                                        </router-link>
-                                    </li>
 
-                                    <li class="nav-item">
-                                        <router-link to="/Empresas" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Empresas</p>
-                                        </router-link>
-                                    </li>
-                                  <li class="nav-item">
-                                    <router-link to="/Projects" class="nav-link">
-                                      <i class="far fa-circle nav-icon"></i>
-                                      <p>Projects</p>
-                                    </router-link>
-                                  </li>
-
-                                  <li class="nav-item">
-                                    <router-link to="/Objetivos" class="nav-link">
-                                      <i class="far fa-circle nav-icon"></i>
-                                      <p>Objetivos</p>
-                                    </router-link>
-                                  </li>
-
-                                    <li class="nav-item">
-                                        <router-link to="/Modulos" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Modulos</p>
-                                        </router-link>
-                                    </li>
 
                                     <li class="nav-item">
                                         <router-link to="/Usuarios" class="nav-link">
