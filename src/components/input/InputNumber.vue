@@ -1,0 +1,61 @@
+<script>
+    export default {
+        name:'InputNumber',
+        props:{
+            id:{
+                type:String,
+                default:'input-number',
+            },
+            name:{
+                type:String,
+                defaul:'input_number'
+            },
+            label:{
+                type:String,
+                defaul:''
+            },
+            placeholder:{
+                type:String,
+                defaul:'Input number'
+            },
+            required:{
+                type:Boolean,
+                default:false,
+            },
+            disabled:{
+                type:Boolean,
+                default:false,
+            },
+            value:{
+                type:String,
+                defaul:''
+            },
+            msgError:{
+                type:String,
+                defaul:''
+            },
+            onChange:{
+                type:Function,
+                default:function(){}
+            }
+        }
+    }
+</script>
+
+<template>
+    <div class='form-group'>
+        <label>{{label}}</label>
+        <input 
+            type='number' 
+            class='form-control'
+            :id='id'
+            :name='name'
+            :placeholder='placeholder'
+            :required='required'
+            :disabled='disabled'
+            :value='value'
+            v-on:change='onChange'
+        />
+        <div v-if='msgError' class='invalid-feedback'>{{msgError}}</div>
+    </div>
+</template>

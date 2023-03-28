@@ -1,0 +1,12 @@
+{
+    "app": {
+        "login": {
+            "user": "Usuario",
+            "pass": "Contraseña",
+            "ext": "Extensión",
+            "btnLogin": "Login",
+            "eU": "Usuario Incorrecto",
+            "eP": "Contraseña Incorrecta"
+        }
+    }
+}

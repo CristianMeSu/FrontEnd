@@ -1,0 +1,12 @@
+{
+    "app": {
+        "login": {
+            "user": "User",
+            "pass": "Password",
+            "ext": "Extension",
+            "btnLogin": "Login",
+            "eU": "Incorrect Username",
+            "eP": "Incorrect Password"
+        }
+    }
+}
