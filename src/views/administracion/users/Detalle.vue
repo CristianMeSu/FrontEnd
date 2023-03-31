@@ -167,91 +167,7 @@
                                                     </td>
                                                 </tr>
 
-                                                <tr>
-                                                    <th scope="row">Empresas:</th>
-                                                    <td >
-                                                        <div class="row" v-if="edit">
-                                                            <div class="col-md-5">
-                                                                <select
-                                                                    name=""
-                                                                    id=""
-                                                                    class="form-control"
-                                                                    v-model="newData.empresaId"
-                                                                >
-                                                                    <option
-                                                                        v-for = "empresa in empresas"
-                                                                        :value = "empresa[ 0 ]"
-                                                                    >{{ empresa[ 1 ] }}</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="col-md-1">
-                                                                <button @click="addUserToCompany()" type="button" class="btn btn-success">
-                                                                    <i class="fas fa-plus-circle"></i>
-                                                                </button>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <ul id="lEmpresas">
-                                                                    <li v-for="e in newData.empresasList" :id="'empresa-'+e.id">
-                                                                        <i @click="borrarEmpresa( e.id , e.nombreEmpresa )" class="fas fa-times" style="color:red; margin-right: .8em; cursor: pointer;"></i>
-                                                                            {{ e.nombreEmpresa }}
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
 
-                                                        <span v-else>
-                                                            <ul>
-                                                                <li v-for="e in newData.empresasList">
-                                                                    {{ e.nombreEmpresa }}
-                                                                    <span v-if="edit"> X </span>
-                                                                </li>
-                                                            </ul>
-                                                        </span>
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <th scope="row">Módulos:</th>
-                                                    <td >
-                                                        <div class="row" v-if="edit">
-                                                            <div class="col-md-5">
-                                                                <select
-                                                                    name=""
-                                                                    id=""
-                                                                    class="form-control"
-                                                                    v-model="newData.moduloId"
-                                                                >
-                                                                    <option
-                                                                        v-for = "modulo in modulos"
-                                                                        :value = "modulo[ 0 ]"
-                                                                    >{{ modulo[ 1 ] }}</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="col-md-1">
-                                                                <button @click="addUserToModulo()" type="button" class="btn btn-success">
-                                                                    <i class="fas fa-plus-circle"></i>
-                                                                </button>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                <ul id="lModulos">
-                                                                    <li v-for="e in newData.modulosList" :id="'modulo-'+e.id">
-                                                                        <i @click="borrarModulo( e.id , e.moduleName )" class="fas fa-times" style="color:red; margin-right: .8em; cursor: pointer;"></i>
-                                                                            {{ e.moduleName }}
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-
-                                                        <span v-else>
-                                                            <ul>
-                                                                <li v-for="e in newData.modulosList">
-                                                                    {{ e.moduleName }}
-                                                                    <span v-if="edit"> X </span>
-                                                                </li>
-                                                            </ul>
-                                                        </span>
-                                                    </td>
-                                                </tr>
 
                                                 <tr>
                                                     <th>Secret Key:</th>
@@ -350,8 +266,6 @@ export default {
             , id : null
             , u : null
 
-            , empresas : null
-            , modulos : null
             , roles : null
             , oneRole : null
             , showPassword : false
@@ -363,16 +277,12 @@ export default {
             , rol : null
             , name : null
             , lastname : null
-            , empresaId : null
             , secretKey4GA : null
             , email : null
             , dataStatus : null
             , chStatus : false
             , dateLastModified : null
             , userWhoModified : null
-            , moduloId : null
-            , moduloName : null
-            , modulosList : null
 
             , newData: {
                 username : null
@@ -380,17 +290,11 @@ export default {
                 , rol : null
                 , name : null
                 , lastname : null
-                , empresaId : null
-                , empresa : null
-                , empresasList : null
                 , dataStatus : null
                 , chStatus : false
                 , dateLastModified : null
                 , userWhoModified : null
                 , email : null
-                , moduloId : null
-                , moduloName : null
-                , modulosList : null
             }
 
             , cssStatus : "stActive"
@@ -427,26 +331,10 @@ export default {
 
             this.name = u.data.userDetails ? u.data.userDetails.userName : null ;
             this.lastname = u.data.userDetails ? u.data.userDetails.userLastname : null ;
-            // // this.empresaId = u.data.userDetails ? u.data.userDetails.empresaId : null ;
-            //
-            // this.empresaId = 1 ;
-            // this.empresa = u.data.userEmpresa ? u.data.userEmpresa[ 1 ] : null ;
-            // this.empresasList = u.data.userCompanies ? u.data.userCompanies : null ;
-            //
-            // this.moduloId = 1 ;
-            // this.modulo = u.data.userModules ? u.data.userModules[ 1 ] : null ;
-            // this.modulosList = u.data.userModules ? u.data.userModules : null ;
 
             this.newData.name = this.name ;
             this.newData.lastname = this.lastname ;
 
-            // this.newData.empresaId = this.empresaId ;
-            // this.newData.empresa = this.empresa ;
-            // this.newData.empresasList = this.empresasList ;
-            //
-            // this.newData.moduloId = this.moduloId ;
-            // this.newData.moduloName = this.moduloName ;
-            // this.newData.modulosList = this.modulosList ;
 
             this.newData.username = this.username ;
             // this.newData.password = this.password ;
@@ -617,182 +505,11 @@ export default {
             return rol.data ;
         }
 
-        , async getEmpresas() {
-            const empresas = await requests.get(
-                'empresas/'
-            ) ;
-
-            this.empresas = empresas.data.data ;
-            // console.log( this.empresas ) ;
-        }
-
-        , async getModules() {
-            const modules = await requests.get(
-                'modulos/'
-            ) ;
-
-            this.modulos = modules.data.data ;
-            // console.log( "this.modulos: " , this.modulos ) ;
-        }
-
-        , async borrarEmpresa( idEmpresa , nombreEmpresa ) {
-            // Se recibe el id del registro, no de la empresa
-
-            let notification ;
-
-            let result = confirm( `Desea retirar usuario "${ this.newData.username }" de la empresa "${ nombreEmpresa }"` , "AERP" ) ;
-            if ( result ) {
-
-                const deleteUserFromCompany = await requests.delete(
-                    'users/details/d/'+ idEmpresa
-                ) ;
-
-                console.log( "deleteUserFromCompany: " , deleteUserFromCompany ) ;
-
-                if ( deleteUserFromCompany.status === 200 || deleteUserFromCompany.status === 201 ) {
-                    notification = errorCodes.get( deleteUserFromCompany.status ) ;
-                    this.$notify({
-                        group: 'foo'
-                        , title: `<h5>Message Code: ${notification.code}</h5>`
-                        , text: `<h6>${notification.message}</h6>`
-                        , type: `${notification.type}`
-                        , duration: 10000
-                    } ) ;
-
-                    let ul = document.getElementById( "lEmpresas" ) ;
-                        let item = ul.querySelector( "#empresa-"+ idEmpresa ) ;
-                            ul.removeChild( item ) ;
-                }
-
-            }
-        }
-
-        , async addUserToCompany() {
-            // console.log( this.newData.empresaId ) ;
-            let notification ;
-
-            const data = {
-                "idUser" : this.getUrlQueryId()
-                , "empresaId" : this.newData.empresaId
-            }
-
-            const addUserToCompany = await requests.post(
-                'users/details/addUserToCompany'
-                , data
-            ) ;
-
-            if ( addUserToCompany.status === 200 || addUserToCompany.status === 201 ) {
-                notification = errorCodes.get( addUserToCompany.status ) ;
-                this.$notify({
-                    group: 'foo'
-                    , title: `<h5>Message Code: ${notification.code}</h5>`
-                    , text: `<h6>${notification.message}</h6>`
-                    , type: `${notification.type}`
-                    , duration: 5000
-                } ) ;
-
-                this.cancelChanges() ;
-                setTimeout( () => {
-                    // console.log( "setTimeOut" ) ;
-                    this.edit = true ;
-                }, 1000 ) ;
-
-            } else {
-                notification = errorCodes.get( 202 ) ;
-                this.$notify({
-                    group: 'foo'
-                    , title: `<h5>Message Code: ${notification.code}</h5>`
-                    , text: `<h6>${notification.message}. But already registered.</h6>`
-                    , type: `warn`
-                    , duration: 10000
-                } ) ;
-            }
-            // console.log( "addUserToCompany: " , addUserToCompany ) ;
-
-        }
-
-        , async borrarModulo( idModulo , moduleName ) {
-            // Se recibe el id del registro, no de la empresa
-
-            let notification ;
-
-            let result = confirm( `Desea retirar usuario "${ this.newData.username }" del acceso al módulo "${ moduleName }"` , "AERP" ) ;
-            if ( result ) {
-
-                const deleteUserFromModule = await requests.delete(
-                    'users/details/dm/'+ idModulo
-                ) ;
-
-                console.log( "deleteUserFromModule: " , deleteUserFromModule ) ;
-
-                if ( deleteUserFromModule.status === 200 || deleteUserFromModule.status === 201 ) {
-                    notification = errorCodes.get( deleteUserFromModule.status ) ;
-                    this.$notify({
-                        group: 'foo'
-                        , title: `<h5>Message Code: ${notification.code}</h5>`
-                        , text: `<h6>${notification.message}</h6>`
-                        , type: `${notification.type}`
-                        , duration: 10000
-                    } ) ;
-
-                    let ul = document.getElementById( "lModulos" ) ;
-                        let item = ul.querySelector( "#modulo-"+ idModulo ) ;
-                            ul.removeChild( item ) ;
-                }
-
-            }
-        }
-
-        , async addUserToModulo() {
-            // console.log( this.newData.empresaId ) ;
-            let notification ;
-
-            const data = {
-                "idUser" : this.getUrlQueryId()
-                , "moduleId" : this.newData.moduloId
-            }
-
-            //console.log( "data: " , data ) ;
-
-            const addUserToModule = await requests.post(
-                'users/details/addUserToModule'
-                , data
-            ) ;
-
-            if ( addUserToModule.status === 200 || addUserToModule.status === 201 ) {
-                notification = errorCodes.get( addUserToModule.status ) ;
-                this.$notify({
-                    group: 'foo'
-                    , title: `<h5>Message Code: ${notification.code}</h5>`
-                    , text: `<h6>${notification.message}</h6>`
-                    , type: `${notification.type}`
-                    , duration: 5000
-                } ) ;
-
-                this.cancelChanges() ;
-                setTimeout( () => {
-                    // console.log( "setTimeOut" ) ;
-                    this.edit = true ;
-                }, 1000 ) ;
-
-            } else {
-                notification = errorCodes.get( 202 ) ;
-                this.$notify({
-                    group: 'foo'
-                    , title: `<h5>Message Code: ${notification.code}</h5>`
-                    , text: `<h6>${notification.message}. But already registered.</h6>`
-                    , type: `warn`
-                    , duration: 10000
-                } ) ;
-            }
-            console.log( "addUserToModule: " , addUserToModule ) ;
-
-        }
 
         , getQRCode() {
             const secretKey = this.secretKey4GA ;
             const account = this.email ;
-            const issuer = "Amistad-ERP" ;
+            const issuer = "TS.AT.Manager" ;
             const url = "otpauth://totp/"
                 + encodeURIComponent( issuer + ":" + account )
                 + "?secret=" + secretKey
@@ -813,8 +530,6 @@ export default {
         this.getRecordData() ;
         this.getRoles() ;
         // this.get1Role() ;
-        this.getEmpresas() ;
-        this.getModules() ;
         // this.changeStatus() ;
         // this.getQRCode() ;
     }
