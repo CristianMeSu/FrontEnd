@@ -427,26 +427,26 @@ export default {
 
             this.name = u.data.userDetails ? u.data.userDetails.userName : null ;
             this.lastname = u.data.userDetails ? u.data.userDetails.userLastname : null ;
-            // this.empresaId = u.data.userDetails ? u.data.userDetails.empresaId : null ;
-
-            this.empresaId = 1 ;
-            this.empresa = u.data.userEmpresa ? u.data.userEmpresa[ 1 ] : null ;
-            this.empresasList = u.data.userCompanies ? u.data.userCompanies : null ;
-
-            this.moduloId = 1 ;
-            this.modulo = u.data.userModules ? u.data.userModules[ 1 ] : null ;
-            this.modulosList = u.data.userModules ? u.data.userModules : null ;
+            // // this.empresaId = u.data.userDetails ? u.data.userDetails.empresaId : null ;
+            //
+            // this.empresaId = 1 ;
+            // this.empresa = u.data.userEmpresa ? u.data.userEmpresa[ 1 ] : null ;
+            // this.empresasList = u.data.userCompanies ? u.data.userCompanies : null ;
+            //
+            // this.moduloId = 1 ;
+            // this.modulo = u.data.userModules ? u.data.userModules[ 1 ] : null ;
+            // this.modulosList = u.data.userModules ? u.data.userModules : null ;
 
             this.newData.name = this.name ;
             this.newData.lastname = this.lastname ;
 
-            this.newData.empresaId = this.empresaId ;
-            this.newData.empresa = this.empresa ;
-            this.newData.empresasList = this.empresasList ;
-
-            this.newData.moduloId = this.moduloId ;
-            this.newData.moduloName = this.moduloName ;
-            this.newData.modulosList = this.modulosList ;
+            // this.newData.empresaId = this.empresaId ;
+            // this.newData.empresa = this.empresa ;
+            // this.newData.empresasList = this.empresasList ;
+            //
+            // this.newData.moduloId = this.moduloId ;
+            // this.newData.moduloName = this.moduloName ;
+            // this.newData.modulosList = this.modulosList ;
 
             this.newData.username = this.username ;
             // this.newData.password = this.password ;
